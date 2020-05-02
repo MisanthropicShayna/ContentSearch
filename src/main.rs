@@ -312,16 +312,16 @@ fn main() {
         };
     }
 
-    println!("Performing content search with the following parameters.");
-    println!("\n{}", "-".repeat(50));
-    println!("Search Patterns: {:?}", search_patterns);
-    println!("Target Dir: {}", target_directory);
-    println!("File Extensions: {:?}", file_extensions);
-    println!("Max File Size: {}", maximum_file_size);
-    println!("Max Queued Files: {}", maximum_files_queued);
-    println!("{}", "-".repeat(50));
-
     if search_patterns.len() > 0 {
+        println!("Performing content search with the following parameters.");
+        println!("\n{}", "-".repeat(50));
+        println!("Search Patterns: {:?}", search_patterns);
+        println!("Target Dir: {}", target_directory);
+        println!("File Extensions: {:?}", file_extensions);
+        println!("Max File Size: {}", maximum_file_size);
+        println!("Max Queued Files: {}", maximum_files_queued);
+        println!("{}", "-".repeat(50));
+
         let search_results:SearchResults = match perform_search(&target_directory, &file_extensions, &search_patterns, &maximum_file_size, &maximum_files_queued) {
             Ok(search_results) => search_results,
             Err(error) => {
